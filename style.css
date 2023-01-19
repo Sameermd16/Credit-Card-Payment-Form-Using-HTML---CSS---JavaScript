@@ -196,12 +196,18 @@ select{
         height: 100%;
     }
     .btn{
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
     body{
         font-size: 12px;
     }
     .btn{
         font-size: 15px;
+    }
+    .card-container-1{
+        margin-top: 1rem;
+    }
+    .card-container{
+        margin-bottom: 1rem;
     }
 }
