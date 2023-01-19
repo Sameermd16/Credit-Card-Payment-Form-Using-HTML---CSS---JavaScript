@@ -17,40 +17,51 @@
     </script>
 </head>
 <body>
-    <main class="front">
-        <div class="images">
-            <img src="/chip.png" alt="" class="chip-img">
-            <img src="/visa.png" alt="" class="card-img">
-        </div>
-        <div class="front-card-number">###################</div>
-        <div class="front-details-flex">
-            <div class="card-holder-front-div">
-                <span class="card-holder-span">card holder</span>
-                <div class="front-carholder-name">full name</div>
+    <div class="card-container-1">
+        <main class="front">
+            <div class="images">
+                <img src="/chip.png" alt="" class="chip-img">
+                <img src="/visa.png" alt="" class="card-img">
             </div>
-            <div>
-                <span>expires</span>
-                <div class="front-expiry">
-                    <span>08</span>
-                    <span>2025</span>
+            <div class="front-card-number">###################</div>
+            <div class="front-details-flex">
+                <div class="card-holder-front-div">
+                    <span class="card-holder-span">card holder</span>
+                    <div class="card-holder-name">full name</div>
+                </div>
+                <div>
+                    <span class="front-expires-span">expires</span>
+                    <div class="front-expiry">
+                        <span class="exp-month">08</span>
+                        <span class="exp-year">2025</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+        <main class="back">
+            <div class="stripe"></div>
+            <div class="box">
+                <span>cvv</span>
+                <div class="cvv-box"></div>
+                <img src="/visa.png" alt="">
+            </div>
+        </main>
+    </div>
+    
     <main class="card-container">
         <form action="">
         <div class="card-number">
             <span>card number</span>
-            <input type="number" maxlength="14">
+            <input type="text" maxlength="14" class="card-number-input">
         </div>
         <div class="card-holder">
             <span>card holder</span>
-            <input type="number" maxlength="14">
+            <input type="text" maxlength="14" class="card-holder-input">
         </div>
         <div class="flexbox">
             <div class="expiry-month">
                 <span>expiration mm</span>
-                <select name="" id="" class="selector">
+                <select name="" id="" class="month-input">
                     <option value="month" selected disabled>month</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -92,11 +103,18 @@
         <button class="btn">submit</button>
         </form>
     </main>
-    
+<script>
+
+document.querySelector('.card-number-input').oninput = () => {
+    document.querySelector('.front-card-number').innerText = document.querySelector('.card-number-input').value;
+} 
+document.querySelector('.card-holder-input').oninput = () => {
+    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+} 
+document.querySelector('.month-input').oninput = () => {
+    document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+}
+</script> 
 </body>
 </html>
-        <option value="01"></option>
-    </select>
-    
-</body>
-</html>
+      
